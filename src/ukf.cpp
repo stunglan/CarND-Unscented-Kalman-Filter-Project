@@ -27,6 +27,8 @@ UKF::UKF() {
   P_ = MatrixXd(5, 5);
   P_.setIdentity();
 
+  
+  // Experimented with values based on NIS plot
   // Process noise standard deviation longitudinal acceleration in m/s^2
   std_a_ = 1.0; // high RMSE with  30; lo
 
@@ -34,10 +36,10 @@ UKF::UKF() {
   std_yawdd_ = 0.3;// program never finnished with original 3030;
 
   // Laser measurement noise standard deviation position1 in m
-  std_laspx_ = 0.15;
+  std_laspx_ = 0.15; // 0.15
 
   // Laser measurement noise standard deviation position2 in m
-  std_laspy_ = 0.15;
+  std_laspy_ = 0.15; // 0.15
 
   // Radar measurement noise standard deviation radius in m
   std_radr_ = 0.3;
