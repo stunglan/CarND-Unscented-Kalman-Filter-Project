@@ -176,6 +176,7 @@ int main(int argc, char* argv[]) {
     if (measurement_pack_list[k].sensor_type_ == MeasurementPackage::LASER) {
       // sensor type
       out_file_ << "lidar" << "\t";
+      cout << "lidar" << "\t" << ukf.NIS_laser_ << "\t" << measurement_pack_list[k].raw_measurements_(0) << endl;
 
       // NIS value
       out_file_ << ukf.NIS_laser_ << "\t";
@@ -187,6 +188,7 @@ int main(int argc, char* argv[]) {
     } else if (measurement_pack_list[k].sensor_type_ == MeasurementPackage::RADAR) {
       // sensor type
       out_file_ << "radar" << "\t";
+      cout << "radar" << "\t" << ukf.NIS_laser_ << "\t" << measurement_pack_list[k].raw_measurements_(0) << endl;
 
       // NIS value
       out_file_ << ukf.NIS_radar_ << "\t";
